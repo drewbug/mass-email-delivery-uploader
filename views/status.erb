@@ -1,0 +1,21 @@
+<% status.each do |name, chunks| %>
+
+  <% total_max = chunks.map { |chunk, values| values[0] }.inject(:+) %>
+  <% total_complete = chunks.map { |chunk, values| values[1] }.inject(:+) %>
+
+  <%= name %><br>
+  <progress max='<%= total_max %>' value='<%= total_complete %>' ></progress>
+  <br><br>
+
+  <% chunks.each do |chunk, values| %>
+
+    <% max = values[0] %>
+    <% complete = values[1] %>
+    
+    <%= chunk %><br>
+    <progress max='<%= max %>' value='<%= complete %>' ></progress>
+    <br><br>
+
+  <% end %>
+
+<% end %>
