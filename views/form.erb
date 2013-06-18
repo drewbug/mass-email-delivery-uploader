@@ -1,4 +1,4 @@
-<form action="/upload" method="post" enctype="multipart/form-data">
+<form action="upload" method="post" enctype="multipart/form-data">
   <p>
     <label for="file">File:</label>
     <input type="file" name="file">
@@ -6,10 +6,14 @@
 
   <p>
     <label for="slice_size">Slice Size:</label>
-    <input type="number" name="slice_size">
+    <input type="number" name="slice_size" value="1000">
   </p>
  
   <p>
     <input name="commit" type="submit" value="Upload" />
   </p>
 </form>
+
+Current status (be careful about uploading files while the following box has contents):
+<br>
+<iframe src="status" height=1000 width=500></iframe>
