@@ -27,7 +27,7 @@ post '/' + secret_path + '/upload' do
     `python #{curr_path}/script_caller.py \"#{$directory}/#{out_file}\" \"#{$directory}/#{out_file}.stat\" > #{out_file}.stdout 2> #{out_file}.stderr &`
   end
   
-  "Success! Files created from #{filename}: #{out_files}<br><a href='.'>Click here to return to the main screen</a>"
+  "Success! Files created from #{filename}: #{out_files}<br><a href='.'>Click here to return to the main screen</a><br>Please give this a minute or two to launch the processes"
 end
 
 get '/' + secret_path + '/status' do
