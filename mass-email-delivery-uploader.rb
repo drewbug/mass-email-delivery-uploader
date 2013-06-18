@@ -9,7 +9,7 @@ post '/upload' do
   filename = params[:file][:filename]
   tempfile = params[:file][:tempfile]
 
-  out_files = IO.foreach(tempfile).each_slice(params[:slice_size]).each_with_index.map do |slice, index|
+  out_files = IO.foreach(tempfile).each_slice(params[:slice_size].to_i).each_with_index.map do |slice, index|
     out_file = "#{File.basename(filename, '.*')}_#{index}.csv"
     File.open(out_file, 'w') { |f| f.puts(slice) }
     out_file
